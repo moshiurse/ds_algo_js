@@ -18,5 +18,7 @@ function pairElement(str) {
     }
   }
   return newArray;
+  
+}
 pairElement("ATTC");
 
