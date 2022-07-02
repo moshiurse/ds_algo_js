@@ -21,27 +21,43 @@
 
 // Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 10^9, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
 
-var isSubsequence = function(s, t) {
-    if(!s.length) return true; 
-    let sequence = s.split('');
-    console.log(sequence);
+// var isSubsequence = function(s, t) {
+//     if(!s.length) return true; 
+//     let sequence = s.split('');
+//     console.log(sequence);
 
-    let leftIndex = 0;
-    let rightIndex = sequence.length-1;
-    let occurrences = [];
-    for(let i = 0; i < t.length; i++) {
-        if(t[i] == sequence[leftIndex] && leftIndex <= rightIndex){
-            occurrences.push({[i]: t[i]})
-            leftIndex++;
+//     let leftIndex = 0;
+//     let rightIndex = sequence.length-1;
+//     let occurrences = [];
+//     for(let i = 0; i < t.length; i++) {
+//         if(t[i] == sequence[leftIndex] && leftIndex <= rightIndex){
+//             occurrences.push({[i]: t[i]})
+//             leftIndex++;
+//         }
+//     }
+//     console.log(occurrences);
+//     if(occurrences.length == sequence.length){
+//         return true;
+//     }
+//     return false;
+// };
+
+// Two pointer sollution
+var isSubsequence = function(s, t) {
+    let sIndex = 0;
+    let tIndex = 0;
+
+    while (sIndex < s.length && tIndex < t.length) {
+        if(s[sIndex] == t[tIndex]){
+            sIndex++;
         }
+        tIndex++;
     }
-    console.log(occurrences);
-    if(occurrences.length == sequence.length){
-        return true;
-    }
+    
+    if(sIndex == s.length) return true;
     return false;
 };
 
-console.log(isSubsequence('aaaaaa', 'bbaaaeeswrfaasera'));
+console.log(isSubsequence('aaaaaa', 'bbaaaeeaa'));
 // "aaaaaa"
 // "bbaaaa"
