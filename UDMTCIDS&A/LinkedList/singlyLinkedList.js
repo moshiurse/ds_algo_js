@@ -42,6 +42,26 @@ class LinkedList {
         return array;
     }
 
+    reverse() {
+        if(!this.head.next) {
+            return this.head;
+        }
+
+        let first = this.head;
+        this.tail = this.head;  
+        let second = first.next;
+
+        while (second) {
+            const temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+        this.head.next = null;
+        this.head = first;
+        return this;
+    }
+
     insert(index, value) {
         if(index >= this.length){
             return this.append(value);
@@ -88,3 +108,4 @@ myLink.append(6);
 myLink.prepend(10);
 myLink.printList();
 myLink.remove(3);
+myLink.reverse();
