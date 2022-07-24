@@ -18,9 +18,3 @@ class Stack {
 
 const myStack = new Stack();
 
-
-
-
-  //Discord
-  //Udemy
-  //google
