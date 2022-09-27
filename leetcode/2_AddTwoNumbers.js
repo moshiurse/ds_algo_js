@@ -88,6 +88,7 @@ var addTwoNumbers = function (l1s, l2s) {
     }
 
     root = root.next;
+    console.log(current);
     return root;
 };
 
