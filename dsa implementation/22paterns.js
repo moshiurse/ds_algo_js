@@ -196,7 +196,121 @@ const pattern15 = (n) => {
     return str;
 }
 
+const pattern16 = (n) => {
+    let str = '';
+    let charCode = 65;
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= i; j++) {
+            str += String.fromCharCode(charCode) + ' ';
+        }
+        str += '\n';
+        charCode++;
+    }
+    return str;
+}
+
+const pattern17 = (n) => {
+    let str = '';
+    let charCode = 65;
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n-i-1; j++) {
+            str += ' ';
+        }
+        let minCode = 65;
+        for (let j = minCode; j <= charCode; j++) {
+            str += String.fromCharCode(j);
+        }
+        for (let j = charCode-1; j >= minCode; j--){
+            str += String.fromCharCode(j);
+        }
+        for (let j = 0; j < n-i-1; j++) {
+            str += ' ';
+        }
+        str += '\n';
+        charCode++;
+    }
+    return str;
+}
+
+const pattern18 = (n) => {
+    let str = '';
+    let charCode = 64+n;
+    for (let i = 0; i < n; i++) {
+        for (let j = charCode-i; j <= charCode; j++) {
+            str += String.fromCharCode(j);
+        }
+        str += '\n';
+    }
+    return str;
+}
+
+const pattern19 = (n) => {
+    let str = '';
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n-i; j++) {
+            str += '*'
+        }
+        for (let j = 0; j < i*2; j++) {
+            str += ' '
+        }
+        for (let j = 0; j < n-i; j++) {
+            str += '*'
+        }
+        
+        str += '\n';
+    }
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j <= i; j++) {
+            str += '*'
+        }
+        for (let j = 0; j < (n-i-1)*2; j++) {
+            str += ' '
+        }
+        for (let j = 0; j <= i; j++) {
+            str += '*'
+        }
+        
+        str += '\n';
+    }
+    return str;
+}
+
+// const pattern20 = (n) => {
+//     let str = '';
+//     for (let i = 0; i < n; i++) {
+//         for (let j = 0; j < n-i; j++) {
+//             str += '*'
+//         }
+//         for (let j = 0; j < i*2; j++) {
+//             str += ' '
+//         }
+//         for (let j = 0; j < n-i; j++) {
+//             str += '*'
+//         }
+        
+//         str += '\n';
+//     }
+
+//     for (let i = 0; i < n; i++) {
+//         for (let j = 0; j <= i; j++) {
+//             str += '*'
+//         }
+//         for (let j = 0; j < (n-i-1)*2; j++) {
+//             str += ' '
+//         }
+//         for (let j = 0; j <= i; j++) {
+//             str += '*'
+//         }
+        
+//         str += '\n';
+//     }
+//     return str;
+// }
 
 
 
-console.log(pattern15(6));
+
+
+
+console.log(pattern20(6));
