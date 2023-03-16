@@ -123,8 +123,80 @@ const pattern10 = (n) => {
     return str;
 }
 
+const pattern11 = (n) => {
+    let str = '';
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j <= i; j++) {
+            let s = '';
+            if(i % 2 == 0 && j % 2 == 0) s = 1;
+            if(i % 2 == 1 && j % 2 == 0) s = 0;
+            if(i % 2 == 1 && j % 2 == 1) s = 1;
+            if(i % 2 == 0 && j % 2 == 1) s = 0;
+
+            str += s;
+        }
+        str += '\n';
+    }
+    return str;
+}
+
+const pattern12 = (n) => {
+    let str = '';
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= i; j++) {
+            str += j;
+        }
+        for (let j = 0; j < (n-i) * 2; j++) {
+            str += ' ';
+        }
+        for (let j = i; j > 0; j--) {
+            str += j;
+        }
+        str += '\n';
+    }
+    return str;
+}
+
+const pattern13 = (n) => {
+    let str = '';
+    let count = 0;
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= i; j++) {
+            count++;
+            str += count + ' ';
+        }
+        str += '\n';
+    }
+    return str;
+}
+
+const pattern14 = (n) => {
+    let str = '';
+    for (let i = 1; i <= n; i++) {
+        let charCode = 65;
+        for (let j = 1; j <= i; j++) {
+            str += String.fromCharCode(charCode) + ' ';
+            charCode++;
+        }
+        str += '\n';
+    }
+    return str;
+}
+
+const pattern15 = (n) => {
+    let str = '';
+    for (let i = 0; i < n; i++) {
+        let charCode = 65;
+        for (let j = 1; j <= n-i; j++) {
+            str += String.fromCharCode(charCode) + ' ';
+            charCode++;
+        }
+        str += '\n';
+    }
+    return str;
+}
 
 
 
 
-console.log(pattern10(6));
+console.log(pattern15(6));
