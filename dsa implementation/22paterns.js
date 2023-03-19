@@ -276,41 +276,76 @@ const pattern19 = (n) => {
     return str;
 }
 
-// const pattern20 = (n) => {
-//     let str = '';
-//     for (let i = 0; i < n; i++) {
-//         for (let j = 0; j < n-i; j++) {
-//             str += '*'
-//         }
-//         for (let j = 0; j < i*2; j++) {
-//             str += ' '
-//         }
-//         for (let j = 0; j < n-i; j++) {
-//             str += '*'
-//         }
+const pattern20 = (n) => {
+    let str = '';
+        for (let i = 0; i < n; i++) {
+        for (let j = 0; j <= i; j++) {
+            str += '*'
+        }
+        for (let j = 0; j < (n-i-1)*2; j++) {
+            str += ' '
+        }
+        for (let j = 0; j <= i; j++) {
+            str += '*'
+        }
         
-//         str += '\n';
-//     }
+        str += '\n';
+    }
 
-//     for (let i = 0; i < n; i++) {
-//         for (let j = 0; j <= i; j++) {
-//             str += '*'
-//         }
-//         for (let j = 0; j < (n-i-1)*2; j++) {
-//             str += ' '
-//         }
-//         for (let j = 0; j <= i; j++) {
-//             str += '*'
-//         }
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < n-i; j++) {
+            str += '*'
+        }
+        for (let j = 0; j < i*2; j++) {
+            str += ' '
+        }
+        for (let j = 0; j < n-i; j++) {
+            str += '*'
+        }
         
-//         str += '\n';
-//     }
-//     return str;
-// }
+        str += '\n';
+    }
+
+    return str;
+}
+
+const pattern21 = (n) => {
+    let str = '';
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            if(i == 0 || j == 0 || i == n-1 || j == n-1){
+                str += '*';
+            }else{
+                str += ' ';
+            }
+        }
+    
+        str += '\n';
+    }
+
+    return str;
+}
+
+const pattern22 = (n) => {
+    let len = (n*2) - 1;
+    let str = '';
+    for (let i = 0; i < len; i++) {
+        for (let j = 0; j < len; j++) {
+            let top = i;
+            let bottom = j;
+            let left = len-1 - i;
+            let right = len-1 - j; 
+            str += (n - Math.min(Math.min(top, bottom), Math.min(left, right)));
+        }
+    
+        str += '\n';
+    }
+
+    return str;
+}
 
 
 
 
 
-
-console.log(pattern20(6));
+console.log(pattern22(3));
