@@ -348,4 +348,4 @@ const pattern22 = (n) => {
 
 
 
-console.log(pattern22(3));
+console.log(pattern22(6));
