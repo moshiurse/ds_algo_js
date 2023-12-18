@@ -15,7 +15,6 @@ var isAnagram = function(s, t) {
             map[s[i]] = map[s[i]] + 1;
         }
     }
-    console.log(map)
 
     for(let i = 0; i < t.length; i++){
         if(map[t[i]]){
