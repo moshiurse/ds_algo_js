@@ -37,8 +37,33 @@ function displayLinkedList(head) {
     return array;
 }
 
-function insertToLinkedList(head, pos) {
-    
+function insertToLinkedList(head, value, pos) {
+    let node = ListNode(value);
+    let curr = head;
+    let count = 0;
+    let prev;
+    let next;
+    while(curr != null){
+        if(pos == 0){
+            node.next = curr;
+            head = node;
+            return head;
+        }else if(count == pos){
+            prev.next = node;
+            node.next = curr;
+            head = prev;
+            return head;
+        }
+        count++;
+        prev = curr;
+        curr = curr.next;
+
+        if(curr.next == null){
+            curr.next = node;
+            console.log(displayLinkedList(head));
+            return head;
+        }
+    }
 }
 
 function removeLinkedListValue(head, value) {
@@ -53,6 +78,10 @@ function rotateLinkedList(head, k) {
 
 const linkedList = arrayToLinkedList([3,4,5,6,78,9,10]);
 
-console.log(displayLinkedList(linkedList));
+// console.log(insertToLinkedList(linkedList, 11, 0));
+// console.log(insertToLinkedList(linkedList, 11, 1));
+console.log(insertToLinkedList(linkedList, 11, 8));
+
+// console.log(displayLinkedList(linkedList));
 
 rotateLinkedList(linkedList, 2);
