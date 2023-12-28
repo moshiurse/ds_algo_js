@@ -7,15 +7,14 @@ var minOperations = function(s) {
     let one = 0;
 
     for (let i = 0; i < s.length; i++) {
-        const char = s[i];
         if (i % 2 === 0) {
-            if (char === '0') {
+            if (s[i] === '0') {
                 one++;
             } else {
                 zero++;
             }
         } else {
-            if (char === '1') {
+            if (s[i] === '1') {
                 one++;
             } else {
                 zero++;
