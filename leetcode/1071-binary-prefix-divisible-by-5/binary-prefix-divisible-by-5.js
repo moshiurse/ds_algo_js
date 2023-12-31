@@ -7,8 +7,7 @@ var prefixesDivBy5 = function(nums) {
     let bin = 0;
     for(let i = 0;i < nums.length; i++){
         bin = (bin % 5) * 2 + nums[i];
-        let isBinary = ( bin % 5 == 0);
-        result.push(isBinary);
+        result.push(( bin % 5 == 0));
     }
     return result
 };
